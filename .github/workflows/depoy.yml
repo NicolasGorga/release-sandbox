@@ -1,0 +1,10 @@
+name: Deploy
+on:
+  push:
+    tags: ["v*"]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: Production
+    steps:
+      - run: echo "Deployed ${{ github.ref_name }}"
